@@ -7,6 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const presentDaysSpan = document.getElementById('presentDays');
     const eligibilityNotice = document.getElementById('eligibilityNotice');
     const installBtn = document.getElementById('installBtn');
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Theme Persistence
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        body.classList.add('light-theme');
+        themeToggle.querySelector('.icon').innerText = '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-theme');
+        const isLight = body.classList.contains('light-theme');
+        themeToggle.querySelector('.icon').innerText = isLight ? '🌙' : '☀️';
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
 
     // Configuration
     const startDate = new Date(2026, 0, 1); // Jan 1, 2026
