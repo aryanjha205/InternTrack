@@ -175,31 +175,41 @@ input:focus {
 }
 
 .attendance-value {
-    font-size: 4rem;
+    font-size: 4.8rem;
     font-weight: 800;
     color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    letter-spacing: -2px;
 }
 
 .status-card {
-    padding: 16px;
-    border-radius: 18px;
+    padding: 20px;
+    border-radius: 20px;
     margin-bottom: 24px;
     text-align: center;
-    font-weight: 700;
-    font-size: 0.9rem;
-    border: 1px solid transparent;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.status-card:hover {
+    transform: translateY(-4px);
 }
 
 .status-eligible {
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(16, 185, 129, 0.15);
     color: var(--success);
-    border-color: rgba(16, 185, 129, 0.2);
+    border: 2px solid var(--success);
 }
 
 .status-not-eligible {
-    background: rgba(239, 68, 68, 0.1);
+    background: rgba(239, 68, 68, 0.15);
     color: var(--danger);
-    border-color: rgba(239, 68, 68, 0.2);
+    border: 2px solid var(--danger);
 }
 
 .notice {
