@@ -26,69 +26,110 @@
         </nav>
 
         <div class="container">
-            <header>
-                <p>Internship Calculator 2026</p>
-            </header>
+            <!-- Status Screen (Default) -->
+            <section id="statusScreen" class="screen active">
+                <header>
+                    <p>Internship Calculator 2026</p>
+                </header>
 
-            <div class="input-section">
-                <div class="input-group">
-                    <label for="calcDate">Calculate Attendance Up To:</label>
-                    <input type="date" id="calcDate" value="2026-03-02">
-                </div>
-                <div class="input-group">
-                    <label for="leaveDays">Number of Leave Days Already Taken</label>
-                    <input type="number" id="leaveDays" placeholder="e.g. 5" min="0" step="0.5" value="5">
-                </div>
-            </div>
-
-            <div class="result-section">
-                <div class="card attendance-card">
-                    <h2>Attendance Status %</h2>
-                    <div id="attendanceValue" class="attendance-value">0%</div>
-                </div>
-
-                <div id="statusCard" class="card status-card">
-                    <span id="statusText"></span>
-                    <p id="eligibilityNotice" class="notice"></p>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-label">Working Days</div>
-                        <div id="totalWorkingDays" class="stat-value">0</div>
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="calcDate">Calculate Attendance Up To:</label>
+                        <input type="date" id="calcDate" value="2026-03-02">
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Present</div>
-                        <div id="presentDays" class="stat-value">0</div>
+                    <div class="input-group">
+                        <label for="leaveDays">Number of Leave Days Already Taken</label>
+                        <input type="number" id="leaveDays" placeholder="0" min="0" step="0.5" value="5">
                     </div>
                 </div>
-                <div class="stat-item" style="margin-top: 16px; text-align: center;">
-                    <div class="stat-label">Total Allowed Leaves (Full Term)</div>
-                    <div id="allowedLeaves" class="stat-value">0</div>
+
+                <div class="result-section">
+                    <div class="card attendance-card animate-pop">
+                        <h2>Current Status</h2>
+                        <div id="attendanceValue" class="attendance-value">0%</div>
+                    </div>
+
+                    <div id="statusCard" class="card status-card">
+                        <span id="statusText"></span>
+                        <p id="eligibilityNotice" class="notice"></p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-label">Working Days</div>
+                            <div id="totalWorkingDays" class="stat-value">0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Present</div>
+                            <div id="presentDays" class="stat-value">0</div>
+                        </div>
+                    </div>
+                    <div class="stat-item full-width-stat">
+                        <div class="stat-label">Maximum Allowed Leaves (Full term)</div>
+                        <div id="allowedLeaves" class="stat-value">0</div>
+                    </div>
                 </div>
-            </div>
+                <button id="installBtn">Add to Home Screen</button>
+            </section>
 
-            <details class="holiday-list">
-                <summary>Official Gujarat Government Holidays 2026</summary>
-                <ul>
-                    <li>Jan 01: New Year's Day</li>
-                    <li>Jan 14: Makar Sankranti</li>
-                    <li>Jan 15: Vasi Uttarayan</li>
-                    <li>Jan 23: Basant Panchami</li>
-                    <li>Jan 26: Republic Day</li>
-                    <li>Feb 19: Chhatrapati Shivaji Maharaj Jayanti</li>
-                    <li>Mar 04: Dhuleti/Holi</li>
-                    <li>Mar 19: Cheti Chand</li>
-                    <li>Mar 21: Id-ul-Fitr</li>
-                    <li>Mar 26: Ram Navami</li>
-                    <li>Mar 31: Mahavir Jayanti</li>
-                    <li>Apr 03: Good Friday</li>
-                    <li>Apr 14: Ambedkar Jayanti</li>
-                    <li>Sundays and 2nd/4th Saturdays are excluded.</li>
-                </ul>
-            </details>
+            <!-- Holidays Screen -->
+            <section id="holidaysScreen" class="screen">
+                <header>
+                    <p>Holiday Calendar 2026</p>
+                </header>
+                <div class="calendar-card">
+                    <div class="calendar-months">
+                        <div class="month-pill">Jan</div>
+                        <div class="month-pill">Feb</div>
+                        <div class="month-pill">Mar</div>
+                        <div class="month-pill">Apr</div>
+                    </div>
+                    <ul class="holiday-grid">
+                        <li><span class="h-date">Jan 01</span><span class="h-name">New Year</span></li>
+                        <li><span class="h-date">Jan 14</span><span class="h-name">Makar Sankranti</span></li>
+                        <li><span class="h-date">Jan 15</span><span class="h-name">Vasi Uttarayan</span></li>
+                        <li><span class="h-date">Jan 23</span><span class="h-name">Basant Panchami</span></li>
+                        <li><span class="h-date">Jan 26</span><span class="h-name">Republic Day</span></li>
+                        <li><span class="h-date">Feb 19</span><span class="h-name">Shivaji Jayanti</span></li>
+                        <li><span class="h-date">Mar 04</span><span class="h-name">Holi/Dhuleti</span></li>
+                        <li><span class="h-date">Mar 19</span><span class="h-name">Cheti Chand</span></li>
+                        <li><span class="h-date">Mar 21</span><span class="h-name">Id-ul-Fitr</span></li>
+                        <li><span class="h-date">Mar 26</span><span class="h-name">Ram Navami</span></li>
+                        <li><span class="h-date">Mar 31</span><span class="h-name">Mahavir Jayanti</span></li>
+                        <li><span class="h-date">Apr 03</span><span class="h-name">Good Friday</span></li>
+                        <li><span class="h-date">Apr 14</span><span class="h-name">Ambedkar Jayanti</span></li>
+                    </ul>
+                    <div class="calendar-note">* Sundays and 2nd/4th Saturdays are automatically excluded.</div>
+                </div>
+            </section>
 
-            <button id="installBtn">Add to Home Screen</button>
+            <!-- More Screen -->
+            <section id="moreScreen" class="screen">
+                <header>
+                    <p>Application Info</p>
+                </header>
+                <div class="info-list">
+                    <div class="info-item">
+                        <span class="info-label">Version</span>
+                        <span class="info-value">2.4.0 (AESTHETIC)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Ruleset</span>
+                        <span class="info-value">80% Eligibility Rule</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Internship Period</span>
+                        <span class="info-value">Jan 1 - Apr 30, 2026</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Region</span>
+                        <span class="info-value">Gujarat Gov Observed</span>
+                    </div>
+                </div>
+                <div class="support-card">
+                    <p>Designed for professional internship tracking with real-time accuracy.</p>
+                </div>
+            </section>
         </div>
 
         <nav class="bottom-nav">

@@ -106,6 +106,28 @@ body {
     /* Space for bottom nav */
 }
 
+/* Screen Management */
+.screen {
+    display: none;
+    animation: slideIn 0.3s ease-out;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 header {
     margin-bottom: 30px;
     text-align: center;
@@ -290,44 +312,102 @@ input:focus {
     font-weight: 600;
 }
 
-/* Utilities */
-.holiday-list {
-    margin-top: 24px;
-    border-radius: 20px;
-    overflow: hidden;
+/* Holiday Calendar Styling */
+.calendar-card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 24px;
+    border: 1px solid var(--glass-border);
 }
 
-.holiday-list summary {
-    background: var(--card-bg);
-    padding: 18px;
+.calendar-months {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.month-pill {
+    padding: 6px 16px;
+    background: var(--accent-blue);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.75rem;
     font-weight: 600;
-    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.holiday-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
     list-style: none;
+}
+
+.holiday-grid li {
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--glass-border);
 }
 
-.holiday-list summary::after {
-    content: '❯';
-    transition: transform 0.3s;
+.h-date {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--accent-blue);
 }
 
-.holiday-list[open] summary::after {
-    transform: rotate(90deg);
+.h-name {
+    font-size: 0.85rem;
+    color: var(--text-primary);
 }
 
-.holiday-list ul {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 10px 20px;
-    list-style: none;
+.calendar-note {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    text-align: center;
 }
 
-.holiday-list li {
-    padding: 10px 0;
+/* Info List Styling */
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-item {
+    background: var(--card-bg);
+    padding: 16px 20px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--glass-border);
+}
+
+.info-label {
     font-size: 0.8rem;
     color: var(--text-secondary);
-    border-bottom: 1px solid var(--glass-border);
+}
+
+.info-value {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.support-card {
+    margin-top: 24px;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));
+    border-radius: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
 }
 
 #installBtn {
@@ -342,6 +422,20 @@ input:focus {
     font-size: 0.9rem;
     display: none;
     cursor: pointer;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-pop {
+    animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 @media (min-width: 481px) {
