@@ -1,0 +1,21 @@
+{
+  "name": "BISAG-N Attendance Calculator",
+  "short_name": "BISAG-N Calc",
+  "description": "Calculate internship attendance for BISAG-N 2026",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0056b3",
+  "icons": [
+    {
+      "src": "/static/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

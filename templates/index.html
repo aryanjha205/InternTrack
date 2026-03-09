@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Pro | 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="theme-color" content="#0056b3">
+    <link rel="apple-touch-icon" href="/static/icons/icon-192x192.png">
+</head>
+
+<body>
+    <div class="app-shell">
+        <nav class="top-nav">
+            <div class="nav-content">
+                <span class="app-logo">Attendance Pro</span>
+                <button id="themeToggle" class="theme-btn" aria-label="Toggle Theme">
+                    <span class="icon">☀️</span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="container">
+            <header>
+                <p>Internship Calculator 2026</p>
+            </header>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="calcDate">Calculate Attendance Up To:</label>
+                    <input type="date" id="calcDate" value="2026-03-02">
+                </div>
+                <div class="input-group">
+                    <label for="leaveDays">Number of Leave Days Already Taken</label>
+                    <input type="number" id="leaveDays" placeholder="e.g. 5" min="0" step="0.5" value="5">
+                </div>
+            </div>
+
+            <div class="result-section">
+                <div class="card attendance-card">
+                    <h2>Attendance Status %</h2>
+                    <div id="attendanceValue" class="attendance-value">0%</div>
+                </div>
+
+                <div id="statusCard" class="card status-card">
+                    <span id="statusText">Calculating...</span>
+                    <p id="eligibilityNotice" class="notice"></p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-label">Working Days</div>
+                        <div id="totalWorkingDays" class="stat-value">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Present</div>
+                        <div id="presentDays" class="stat-value">0</div>
+                    </div>
+                </div>
+                <div class="stat-item" style="margin-top: 16px; text-align: center;">
+                    <div class="stat-label">Total Allowed Leaves (Full Term)</div>
+                    <div id="allowedLeaves" class="stat-value">0</div>
+                </div>
+            </div>
+
+            <details class="holiday-list">
+                <summary>Official Gujarat Government Holidays 2026</summary>
+                <ul>
+                    <li>Jan 01: New Year's Day</li>
+                    <li>Jan 14: Makar Sankranti</li>
+                    <li>Jan 15: Vasi Uttarayan</li>
+                    <li>Jan 23: Basant Panchami</li>
+                    <li>Jan 26: Republic Day</li>
+                    <li>Feb 19: Chhatrapati Shivaji Maharaj Jayanti</li>
+                    <li>Mar 04: Dhuleti/Holi</li>
+                    <li>Mar 19: Cheti Chand</li>
+                    <li>Mar 21: Id-ul-Fitr</li>
+                    <li>Mar 26: Ram Navami</li>
+                    <li>Mar 31: Mahavir Jayanti</li>
+                    <li>Apr 03: Good Friday</li>
+                    <li>Apr 14: Ambedkar Jayanti</li>
+                    <li>Sundays and 2nd/4th Saturdays are excluded.</li>
+                </ul>
+            </details>
+
+            <button id="installBtn">Add to Home Screen</button>
+        </div>
+
+        <script src="/static/js/script.js"></script>
+</body>
+
+</html>
